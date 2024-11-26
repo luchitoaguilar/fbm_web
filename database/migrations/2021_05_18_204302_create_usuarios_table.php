@@ -33,7 +33,7 @@ class CreateUsuariosTable extends Migration
 
         \App\Models\Usuario::create([
             'persona_id'            => 1,
-            'rol_id'                => 2,
+            'rol_id'                => 1,
             'cargo_id'              => 1,
             'email'               => 'jefe_com_fbm@cofadena.gob.bo',
             'password'              => bcrypt('5166170'),

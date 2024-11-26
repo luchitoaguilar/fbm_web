@@ -16,29 +16,29 @@
 					<div class="menu-profile-info">
 						<div class="d-flex align-items-center">
 							<div class="flex-grow-1">
-                                {{ Auth::user()->persona->Persona }}
+                                {{ Auth::user()->persona->paterno }} {{ Auth::user()->persona->materno }} {{ Auth::user()->persona->nombres }}
 							</div>
 							<div class="menu-caret ms-auto"></div>
 						</div>
-						<small>{{ Auth::user()->rol->Rol }}</small>
+						<small>{{ Auth::user()->rol->rol }}</small>
 					</div>
 				</a>
 			</div>
 			<div id="appSidebarProfileMenu" class="collapse">
 				<div class="menu-item pt-5px">
-					//corregir cuando cree usuarios
+					{{-- corregir cuando cree usuarios --}}
 					{{--  <a href="{{ route('Persona.changePassword') }}" v-if="auth.Unidad == persona.Unidad || auth.Rol==1 || auth.Rol==2 || auth.Rol==3 || auth.Rol==5"
                        @click.prevent="cambiopassword" class="menu-link">
 						<div class="menu-icon"><i class="fa fa-cog"></i></div>
 						<div class="menu-text">Configuración</div>
 					</a>  --}}
 				</div>
-				<div class="menu-item">
+				{{-- <div class="menu-item">
 					<a href="javascript:;" class="menu-link">
 						<div class="menu-icon"><i class="fa fa-pencil-alt"></i></div>
-						<div class="menu-text"> Envie Feedback</div>
+						<div class="menu-text"> {{ Auth::user()->rol->rol }}</div>
 					</a>
-				</div>
+				</div> --}}
 {{--				<div class="menu-item pb-5px">--}}
 {{--					<a href="javascript:;" class="menu-link">--}}
 {{--						<div class="menu-icon"><i class="fa fa-question-circle"></i></div>--}}

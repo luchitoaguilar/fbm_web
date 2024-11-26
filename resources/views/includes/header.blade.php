@@ -76,7 +76,7 @@
 
 		<div class="navbar-item navbar-user dropdown">
 			<a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
-				<img src="{{url('')}}/storage/documents/{{ Auth::user()->Foto }} " alt="" />
+				<img src="{{url('')}}/{{ Auth::user()->persona->foto }} " alt="" />
 				<span>
 					<span class="d-none d-md-inline"></span>
 					<b class="caret"></b>

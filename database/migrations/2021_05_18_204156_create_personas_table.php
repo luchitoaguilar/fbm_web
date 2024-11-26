@@ -36,21 +36,7 @@ class CreatePersonasTable extends Migration
             $table->unique(['ci', 'complemento', 'expedido_id']);
         });
 
-        \App\Models\Persona::create([
-            'paterno'               => 'SEOANE',
-            'materno'               => 'SÁNCHEZ',
-            'nombres'               => 'CHARLIE',
-            'ci'                    => 1234567,
-            'expedido_id'           => 1,
-            'fecha_nacimiento'      => '11/11/1984',
-            'lugar_nacimiento_id'      => 7,
-            'telefono'              => 23443223,
-            'foto'                  => 'assets/images/personas/default_persona.png',
-            'firma_digital'         => 'assets/images/personas/firmas/default_firma.png',
 
-            'usuario_creado_id'     => 1,
-            'usuario_modificado_id' => 1
-        ]);
         \App\Models\Persona::create([
             'paterno'               => 'AGUILAR',
             'materno'               => 'CABEZAS',

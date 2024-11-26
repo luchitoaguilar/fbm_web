@@ -119,6 +119,8 @@ class Usuario extends Authenticatable
         return $this->belongsTo(Persona::class, 'ci', 'id');
     }
 
+
+
     /**
      * @return HasOne
      */

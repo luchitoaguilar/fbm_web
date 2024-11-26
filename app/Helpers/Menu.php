@@ -55,38 +55,38 @@ function crear_menu(): array
                 'route-name' => '/persona/listar',
                 'visible' => true
             ],
-            [
-                'title' => 'Menú Zafra',
-                'url' => '#',
-            ],
-            [
-                'icon' => 'fa fa-blind',
-                'title' =>  'Personal ' . __('messages.sistema.zafrero'),
-                'url' => route('listar_zafrero'),
-                'route-name' => '/zafrero/listar',
-                'visible' => true
-            ],
-            [
-                'icon' => 'fa fa-leaf',
-                'title' => __('messages.sistema.zafra'),
-                'url' => route('listar_zafra'),
-                'route-name' => '/zafra/listar',
-                'visible' => true
-            ],
-            [
-                'icon' => 'fa fa-car',
-                'title' => __('messages.sistema.vehiculo'),
-                'url' => route('listar_vehiculo'),
-                'route-name' => '/vehiculo/listar',
-                'visible' => true
-            ],
-            [
-                'icon' => 'fa fa-cog',
-                'title' => __('messages.sistema.variables'),
-                'url' => route('variables'),
-                'route-name' => '/variables/listar',
-                'visible' => true
-            ],
+            // [
+            //     'title' => 'Menú Zafra',
+            //     'url' => '#',
+            // ],
+            // [
+            //     'icon' => 'fa fa-blind',
+            //     'title' =>  'Personal ' . __('messages.sistema.zafrero'),
+            //     'url' => route('listar_zafrero'),
+            //     'route-name' => '/zafrero/listar',
+            //     'visible' => true
+            // ],
+            // [
+            //     'icon' => 'fa fa-leaf',
+            //     'title' => __('messages.sistema.zafra'),
+            //     'url' => route('listar_zafra'),
+            //     'route-name' => '/zafra/listar',
+            //     'visible' => true
+            // ],
+            // [
+            //     'icon' => 'fa fa-car',
+            //     'title' => __('messages.sistema.vehiculo'),
+            //     'url' => route('listar_vehiculo'),
+            //     'route-name' => '/vehiculo/listar',
+            //     'visible' => true
+            // ],
+            // [
+            //     'icon' => 'fa fa-cog',
+            //     'title' => __('messages.sistema.variables'),
+            //     'url' => route('variables'),
+            //     'route-name' => '/variables/listar',
+            //     'visible' => true
+            // ],
         ];
     } elseif (Auth::user()->rol_id == 2) {
         return [
