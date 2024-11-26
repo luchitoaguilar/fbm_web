@@ -1,0 +1,15 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/assets/js/modules/.DS_Store": "/assets/js/modules/.DS_Store",
+    "/assets/plugins/sweetalert2/dist/sweetalert2.all.js": "/assets/plugins/sweetalert2/dist/sweetalert2.all.js",
+    "/assets/plugins/sweetalert2/dist/sweetalert2.all.min.js": "/assets/plugins/sweetalert2/dist/sweetalert2.all.min.js",
+    "/assets/plugins/sweetalert2/dist/sweetalert2.css": "/assets/plugins/sweetalert2/dist/sweetalert2.css",
+    "/assets/plugins/sweetalert2/dist/sweetalert2.js": "/assets/plugins/sweetalert2/dist/sweetalert2.js",
+    "/assets/plugins/sweetalert2/dist/sweetalert2.min.css": "/assets/plugins/sweetalert2/dist/sweetalert2.min.css",
+    "/assets/plugins/sweetalert2/dist/sweetalert2.min.js": "/assets/plugins/sweetalert2/dist/sweetalert2.min.js",
+    "/assets/plugins/toastr/build/toastr.css": "/assets/plugins/toastr/build/toastr.css",
+    "/assets/plugins/toastr/build/toastr.js.map": "/assets/plugins/toastr/build/toastr.js.map",
+    "/assets/plugins/toastr/build/toastr.min.css": "/assets/plugins/toastr/build/toastr.min.css",
+    "/assets/plugins/toastr/build/toastr.min.js": "/assets/plugins/toastr/build/toastr.min.js"
+}
