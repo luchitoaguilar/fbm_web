@@ -107,6 +107,11 @@ Route::get('requisitos', [App\Http\Controllers\RequisitoController::class, 'view
 Route::get('formularios', [App\Http\Controllers\FormularioController::class, 'view'])->name('formularios');
 
 /****************************** */
+/*     Galeria                */
+/****************************** */
+Route::get('galeria', [App\Http\Controllers\GaleriaController::class, 'view'])->name('galeria');
+
+/****************************** */
 /*     Productos                */
 /****************************** */
 Route::get('municion9', [App\Http\Controllers\ProductoController::class, 'municion9'])->name('municion9');

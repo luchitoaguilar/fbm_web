@@ -36,14 +36,14 @@
                             </li>
                         </li>
                     </ul>
-                    @if ($zafra)
+                    {{-- @if ($zafra)
                     <ul class="nav navbar-nav">
                         <li>
                             <a style="color: yellow"><i class="fa fa-bullseye"></i> Municion cal. 9x19mm {{ date('Y') }}: {{ round($zafra ?? '',2) }} Ton.</a>
                             </li>
                         </li>
                     </ul>
-                    @endif
+                    @endif --}}
                     <ul class="nav navbar-nav navbar-end">
                         <li><a href="https://www.facebook.com/fbmcofadena" target="_blank"><i class="fab fa-facebook-f f-s-14"></i></a></li>
                         <li><a href="#"><i class="fab fa-twitter f-s-14"></i></a></li>
@@ -120,11 +120,21 @@
                                         <a class="dropdown-item" href="{{ route('otros') }}">Otros</a>
                                     </div>
                                 </li>
+                                <li class="dropdown dropdown-hover">
+                                    <a href="#" data-bs-toggle="dropdown">
+                                        Galeria
+                                        <b class="caret"></b>
+                                        <span class="arrow top"></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item"  href="{{ route('galeria') }}">Fotos</a>
+                                        <a class="dropdown-item"  href="{{ route('video') }}">Videos</a>
+                                    </div>
+                                </li>
                                 <li><a href="{{ route('requisitos') }}">Requisitos</a></li>
                                 <li><a href="{{ route('formularios') }}">Formularios</a></li>
-                                <li><a href="{{ route('video') }}">Videos</a></li>
                                 <li><a href="{{ route('noticia') }}">Noticias</a></li>
-                                <li><a href="{{ route('contacto') }}">Contáctanos</a></li>
+                                <li><a href="{{ route('contacto') }}">Contácto</a></li>
                             </ul>
                         </div>
                     </div>
