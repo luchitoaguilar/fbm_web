@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <h4 class="footer-header">FABRICA BOLIVIANA DE MUNICIÓN</h4>
-                <img src="{{ asset('assets/img/logo/fbm_logo6.png') }}" alt="" width="80%" />
+                <img src="{{ asset('assets/img/logo/fbm_logo6.png') }}" alt="" width="70%" />
             </div>
 
             <!-- BEGIN col-3 -->

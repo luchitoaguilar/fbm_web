@@ -148,6 +148,7 @@
 @endsection
 
 @push('variables')
+
     var auth = {!! Auth::user() !!};
     var listar_producto = '{{ route('listar_producto') }}';
     var guardar_contacto = '{{ route('guardar_contacto') }}';

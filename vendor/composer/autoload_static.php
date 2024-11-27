@@ -605,6 +605,7 @@ class ComposerStaticInit8395a576b45c797b622277d5bc22036b
         'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
         'App\\Http\\Controllers\\ExpedidoController' => __DIR__ . '/../..' . '/app/Http/Controllers/ExpedidoController.php',
         'App\\Http\\Controllers\\FormularioController' => __DIR__ . '/../..' . '/app/Http/Controllers/FormularioController.php',
+        'App\\Http\\Controllers\\GaleriaController' => __DIR__ . '/../..' . '/app/Http/Controllers/GaleriaController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\MainController' => __DIR__ . '/../..' . '/app/Http/Controllers/MainController.php',
         'App\\Http\\Controllers\\NacimientoController' => __DIR__ . '/../..' . '/app/Http/Controllers/NacimientoController.php',
