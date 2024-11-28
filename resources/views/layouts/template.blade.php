@@ -75,7 +75,7 @@
                     <div class="header-logo">
 
                         <a href="{{ route('inicio') }}">
-                            <img src="{{ asset('assets/img/logo/fbm_logo2.png') }}" alt="" />
+                            <img src="{{ asset('assets/img/logo/fbm_logo7.png') }}" alt="" />
                             <h3>|</h3>
                             <span class="brand-text">
                                 

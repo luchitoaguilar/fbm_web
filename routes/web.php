@@ -23,7 +23,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use PHPUnit\Framework\Error\Notice;
 
-URL::forceScheme('https');
+if (config('app.env') === 'production') {
+    URL::forceScheme('https');
+}
+
+// URL::forceScheme('https');
 
 Auth::routes();
 
