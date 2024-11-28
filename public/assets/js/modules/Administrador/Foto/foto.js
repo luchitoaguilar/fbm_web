@@ -1,7 +1,7 @@
 // $(".default-select2").select2();
 
 $(function () {
-    var tablaPrincipal = $('#tabla-video').DataTable({
+    var tablaPrincipal = $('#tabla-foto').DataTable({
         order: [[1, 'asc']],
         processing: true,
         deferRender: true,
@@ -18,16 +18,12 @@ $(function () {
         ],
         columns: [
             { data: 'id', name: 'id', visible: false },
-            { data: 'titulo', name: 'titulo', title: 'Titulo', orderable: true, searchable: true },
-            {
-                title: 'Video', searchable: false, orderable: false, data: function (row, type, set) {
-                    return `<a onclick="vm.$options.methods.mostrarVideo(${row.id})" class="btn btn-outline-info btn-xs"><i class="fa fa-video"></i> Video</a>`;
-                }
-            },
+            { data: 'detalle', name: 'detalle', title: 'detalle', orderable: true, searchable: true },
+            { data: 'foto', name: 'foto', title: 'Foto', orderable: false, searchable: true },
             { data: 'estado', name: 'estado', title: 'Estado', orderable: true, searchable: true },
             {
                 title: 'Opciones', searchable: false, orderable: false, data: function (row, type, set) {
-                    return `<a onclick="vm.$options.methods.showVideo(${row.id})" class="btn btn-outline-info btn-xs"><i class="fa fa-bars"></i> Detalles</a>`;
+                    return `<a onclick="vm.$options.methods.showFoto(${row.id})" class="btn btn-outline-info btn-xs"><i class="fa fa-bars"></i> Detalles</a>`;
                 }
             },
         ],
@@ -38,13 +34,12 @@ $(function () {
 });
 
 var vm = new Vue({
-    el: '#video-app',
+    el: '#foto-app',
     data: {
         errors: {},
         modelo: {},
-        titulo: {},
-        descripcion: {},
-        video: {},
+        detalle: {},
+        foto: {},
         estado: {},
         editar: false
     },
@@ -52,73 +47,71 @@ var vm = new Vue({
 
     },
     methods: {
-        mostrarVideo(id) {
+        mostrarFoto(id) {
             axios
-                .get(mostrar_video + '/' + id)
+                .get(mostrar_foto + '/' + id)
                 .then(response => {
                     vm.modelo = response.data.data
-                    console.log(vm.modelo.video);
-                    $('#frmmostrarvideo').modal('show');
+                  
+                    $('#frmmostrarfoto').modal('show');
                 }).catch(error => {
                     Swal.fire(error.response.data.message, { icon: 'error' });
                 });
         },
-        showVideo(id) {
+        showFoto(id) {
             axios
-                .get(datos_video + '/' + id)
+                .get(datos_foto + '/' + id)
                 .then(response => {
                     vm.modelo = response.data.data
-                    $('#frmvervideo').modal('show');
+                    $('#frmverfoto').modal('show');
                 }).catch(error => {
                     Swal.fire(error.response.data.message, { icon: 'error' });
                 });
         },
-        createVideo() {
+        createFoto() {
             vm.id = null;
-            vm.titulo = '';
-            vm.video = '';
+            vm.detalle = '';
+            vm.foto = '';
             vm.estado = '';
             vm.editar = false;
             vm.errors = {};
-            $('#frmvideo').modal('show');
+            $('#frmfoto').modal('show');
         },
-        storeVideo() {
+        storeFoto() {
             vm.errors = {};
             vm.modelo = {
                 id: vm.id,
-                titulo: vm.titulo,
+                detalle: vm.detalle,
             };
             //inicializamos una variable tipo FormData para las imagenes
             const modelo = new FormData();
-            modelo.append('video', vm.video);
+            modelo.append('foto', vm.foto);
             //recorremos y asignamos todas las variables incluyendo las de tipo File al modelo
             for (let key in vm.modelo) {
                 Array.isArray(vm.modelo[key]) ?
                     vm.modelo[key].forEach(value => modelo.append(key + '[]', value)) :
                     modelo.append(key, vm.modelo[key]);
             }
-            for (var pair of modelo.entries()) {
-                console.log(pair[0]+ '=> ' + pair[1]); 
-            }
+          
             axios
-                .post(guardar_video, modelo, {
+                .post(guardar_foto, modelo, {
                     headers: {
                         Accept: "application/json",
-            "Content-Type": "multipart/form-data",
+                        "Content-Type": "multipart/form-data",
                     }
                 })
                 .then(response => {
                     vm.modelo = {};
                     vm.errors = {};
-                    $('#frmvideo').modal('hide');
+                    $('#frmfoto').modal('hide');
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Su video se ha guardado exitosamente',
+                        title: 'Su foto se ha guardado exitosamente',
                         showConfirmButton: false,
                         timer: 1500
                     })
-                    var tablaPrincipal = $('#tabla-video').DataTable();
+                    var tablaPrincipal = $('#tabla-foto').DataTable();
                     tablaPrincipal.draw();
                 }).catch(error => {
                     vm.errors = error.response.data.errors;
@@ -126,29 +119,30 @@ var vm = new Vue({
 
         },
         //los dos funcionan para recuperar los datos del archivo File y las asignamos a las variables
-        select_video(event) {
-            vm.video = event.target.files[0];
+        select_foto(event) {
+            vm.foto = event.target.files[0];
         },
-        editVideo(id) {
+        editFoto(id) {
+            console.log('here');
             var temporal;
             vm.editar = true;
             vm.errors = {};
             axios
-                .get(datos_video + '/' + id)
+                .get(datos_foto + '/' + id)
                 .then(response => {
                     temporal = response.data.data;
                     vm.id = temporal.id;
-                    vm.titulo = temporal.titulo;
-                    vm.video = temporal.video;
+                    vm.detalle = temporal.detalle;
+                    vm.foto = temporal.foto;
 
-                    $('#frmvideo').modal('show');
-                    $('#frmvervideo').modal('hide');
+                    $('#frmfoto').modal('show');
+                    $('#frmverfoto').modal('hide');
                 });
         },
-        deleteVideo(id) {
-            $('#frmvervideo').modal('hide');
+        deleteFoto(id) {
+            $('#frmverfoto').modal('hide');
             Swal.fire({
-                title: 'Deseas eliminar la video?',
+                title: 'Deseas eliminar la foto?',
                 text: "No se puede deshacer esta accion!",
                 icon: 'warning',
                 showCancelButton: true,
@@ -158,7 +152,7 @@ var vm = new Vue({
                 confirmButtonText: 'Si'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    axios.delete(eliminar_video + '/' + id)
+                    axios.delete(eliminar_foto + '/' + id)
                         .then(response => {
                             Swal.fire({
                                 position: 'top-end',
@@ -167,9 +161,9 @@ var vm = new Vue({
                                 showConfirmButton: false,
                                 timer: 1500
                             })
-                            var tablaPrincipal = $('#tabla-video').DataTable();
+                            var tablaPrincipal = $('#tabla-foto').DataTable();
                             tablaPrincipal.draw();
-                            $('#frmvervideo').modal('hide');
+                            $('#frmverfoto').modal('hide');
                         })
                 } else {
                     Swal.fire({
@@ -179,7 +173,7 @@ var vm = new Vue({
                         showConfirmButton: false,
                         timer: 1500
                     })
-                    $('#frmvervideo').modal('show');
+                    $('#frmverfoto').modal('show');
                 }
             });
         },

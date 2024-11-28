@@ -35,6 +35,13 @@ function crear_menu(): array
                 'visible' => true
             ],
             [
+                'icon' => 'fa fa-camera',
+                'title' => __('messages.sistema.foto'),
+                'url' => route('listar_foto'),
+                'route-name' => '/foto/listar',
+                'visible' => true
+            ],
+            [
                 'icon' => 'fa fa-film',
                 'title' => __('messages.sistema.video'),
                 'url' => route('listar_video'),

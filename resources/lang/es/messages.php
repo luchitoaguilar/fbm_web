@@ -23,6 +23,7 @@ return [
         'noticia'           => 'Noticia',
         'persona'           => 'Persona',
         'video'             => 'Video',
+        'foto'             => 'Foto',
         'zafra'             => 'Zafra',
         'vehiculo'         => 'Vehiculo',
         'zafrero'           => 'Zafrero',

@@ -32,7 +32,7 @@ $(function () {
             },
         ],
         lengthMenu: [8, 50, 75, 100, 150, 200],
-        // language: { 'url': ruta_tabla_traduccion },
+        language: { 'url': ruta_tabla_traduccion },
         dom: 'lfiptip',
     });
 });
@@ -106,7 +106,7 @@ var vm = new Vue({
                         icon: 'success',
                         title: 'Su mensaje se ha enviado exitosamente, En breve nos contactaremos contigo',
                         showConfirmButton: false,
-                        timer: 2500
+                        timer: 1500
                     })
                     vm.id = 0;
                     vm.nombre = '';

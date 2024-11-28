@@ -156,7 +156,7 @@ Route::group(['middleware' => ['administrador']], function () {
 });
 
 /****************************** */
-/*     Video                   */
+/*     Foto                    */
 /****************************** */
 
 Route::get('videos/{id}', [App\Http\Controllers\VideoController::class, 'show'])->name('video_ver');
@@ -171,6 +171,24 @@ Route::group(['middleware' => ['administrador']], function () {
     Route::delete('video/{id}', [App\Http\Controllers\VideoController::class, 'destroy'])->name('eliminar_video');
     Route::get('video/{video_id}', [App\Http\Controllers\VideoController::class, 'getVideo'])->name('buscar_video');
     Route::get('video/{id}', [App\Http\Controllers\VideoController::class, 'mostrar'])->name('mostrar_video');
+});
+
+/****************************** */
+/*     Video                   */
+/****************************** */
+
+Route::get('fotos/{id}', [App\Http\Controllers\FotoController::class, 'show'])->name('foto_ver');
+Route::get('fotos', [App\Http\Controllers\FotoController::class, 'index'])->name('foto');
+
+Route::group(['middleware' => ['administrador']], function () {
+    Route::get('foto/listar', [App\Http\Controllers\FotoController::class, 'listar'])->name('listar_foto');
+    Route::get('foto/create', [App\Http\Controllers\FotoController::class, 'create'])->name('crear_foto');
+    Route::post('foto', [App\Http\Controllers\FotoController::class, 'storefoto'])->name('guardar_foto');
+    Route::get('foto/{id}/edit', [App\Http\Controllers\FotoController::class, 'edit'])->name('editar_foto');
+    Route::put('foto/{id}', [App\Http\Controllers\FotoController::class, 'update'])->name('actualizar_foto');
+    Route::delete('foto/{id}', [App\Http\Controllers\FotoController::class, 'destroy'])->name('eliminar_foto');
+    Route::get('foto/{foto_id}', [App\Http\Controllers\FotoController::class, 'getfoto'])->name('buscar_foto');
+    Route::get('foto/{id}', [App\Http\Controllers\FotoController::class, 'mostrar'])->name('mostrar_foto');
 });
 
 /****************************** */
