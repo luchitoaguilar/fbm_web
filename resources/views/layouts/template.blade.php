@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>FBM | @yield('title')</title>
-    <link rel="shortcut icon" href="{{ asset('assets/img/logo/fbm_logo2.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo/fbm_logo3.png') }}">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <meta content="" name="Unidad Productiva Agricola Bermejo" />
     <meta content="" name="FBM" />
@@ -75,7 +75,7 @@
                     <div class="header-logo">
 
                         <a href="{{ route('inicio') }}">
-                            <img src="{{ asset('assets/img/logo/fbm_logo7.png') }}" alt="" />
+                            <img src="{{ asset('assets/img/logo/fbm_logo5.png') }}" alt="" />
                             <h3>|</h3>
                             <span class="brand-text">
                                 
@@ -88,7 +88,7 @@
                     <!-- END header-logo -->
                     <!-- BEGIN header-nav -->
                     <div class="header-nav">
-                        <div class="collapse navbar-collapse navbar-expand-xxxl" id="navbar-collapse">
+                        <div class="collapse navbar-collapse navbar-expand-xxxl" id="navbar-collapse" style="margin-right: 0px;">
                             <ul class="nav justify-content-center">
                                 <li class="active"><a href="{{ route('inicio') }}">Inicio</a></li>
                                 <li class="dropdown dropdown-hover">
@@ -103,6 +103,7 @@
                                         <a class="dropdown-item" href="{{ route('objetivos') }}">Objetivos</a>
                                     </div>
                                 </li>
+
                                 <li class="dropdown dropdown-hover">
                                     <a href="#" data-bs-toggle="dropdown">
                                         Productos
@@ -120,6 +121,20 @@
                                         <a class="dropdown-item" href="{{ route('otros') }}">Otros</a>
                                     </div>
                                 </li>
+
+                                <li class="dropdown dropdown-hover">
+                                    <a href="#" data-bs-toggle="dropdown">
+                                        Compra
+                                        <b class="caret"></b>
+                                        <span class="arrow top"></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="{{ route('requisitos') }}">Requisitos</a>
+                                        <a class="dropdown-item" href="{{ route('formularios') }}">Formularios</a>
+                                        <a class="dropdown-item" href="{{ route('armamento') }}">Registra tu compra</a>
+                                    </div>
+                                </li>
+
                                 <li class="dropdown dropdown-hover">
                                     <a href="#" data-bs-toggle="dropdown">
                                         Galeria
@@ -131,8 +146,6 @@
                                         <a class="dropdown-item"  href="{{ route('video') }}">Videos</a>
                                     </div>
                                 </li>
-                                <li><a href="{{ route('requisitos') }}">Requisitos</a></li>
-                                <li><a href="{{ route('formularios') }}">Formularios</a></li>
                                 <li><a href="{{ route('noticia') }}">Noticias</a></li>
                                 <li><a href="{{ route('contacto') }}">Contácto</a></li>
                             </ul>
