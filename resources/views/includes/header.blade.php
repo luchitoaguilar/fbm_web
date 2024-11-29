@@ -17,7 +17,7 @@
 		</button>
 		@endif
 {{--            <a href="{{url('/')}}" class="logo"><img class="app-logo" src="{{url('/')}}/images/logo_cofadena.png" style="width: 50%"></a>--}}
-		<a href="/" class="navbar-brand"><span class="navbar-logo"><img class="app-logo" src="{{ asset('assets/img/logo/fbm_logo.png') }} " style="width: 60%"></span><b></b> FBM</a>
+		<a href="/" class="navbar-brand"><span class="navbar-logo"><img class="app-logo" src="{{ asset('assets/img/logo/fbm_logo5.png') }} " style="width: 50%"></span><b></b> FBM</a>
 		@if ($appHeaderMegaMenu && !$appSidebarTwo)
 		<button type="button" class="navbar-mobile-toggler" data-bs-toggle="collapse" data-bs-target="#top-navbar">
 			<span class="fa-stack fa-lg">

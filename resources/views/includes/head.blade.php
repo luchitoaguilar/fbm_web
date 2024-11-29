@@ -1,6 +1,6 @@
 <meta charset="utf-8" />
 <title>FBM | @yield('title')</title>
-<link rel="shortcut icon" href="{{ asset('assets/img/logo/fbm_logo1.png') }}">
+<link rel="shortcut icon" href="{{ asset('assets/img/logo/fbm_logo6.png') }}">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 <meta content="" name="description" />
 <meta content="" name="author" />

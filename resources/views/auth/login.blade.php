@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name') }} | @yield('title', 'Login')</title>
-    {{ Html::favicon( '/images/cofadena.ico' ) }}
+    {{ Html::favicon('assets/img/logo/fbm_logo3.png') }}
 
 <!-- Styles -->
     {!! Html::style('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900') !!}
@@ -33,9 +33,9 @@
     <div class="login login-with-news-feed">
         <!-- BEGIN news-feed -->
         <div class="news-feed">
-            <div class="news-image" style="background-image: url({{ url('/') }}/assets/img/logo/fbm_logo.png)"></div>
+            <div class="news-image" style="background-image: url({{ asset('assets/img/logo/fbm_logo7.png') }})"></div>
             <div class="news-caption">
-                <h4 class="caption-title"><b>COFADENA</b> | Pagina WEB</h4>
+                <h4 class="caption-title"><b>FBM</b> | Pagina WEB</h4>
                 <p>
                     FABRICA BOLIVIA DE MUNICIÓN - COFADENA
                 </p>
@@ -54,7 +54,7 @@
 
                         <b>COFADENA </b> | FBM
                     </div>
-                    <small>Sistema de Administracion Pagina WEB</small>
+                    <small>Sistema de Administración</small>
                 </div>
                 <div class="icon">
                     <i class="fa fa-sign-in-alt"></i>
@@ -85,7 +85,7 @@
                         </label>
                     </div>
                     <div class="mb-15px">
-                        <button type="submit" class="btn btn-cyan d-block h-45px w-100 btn-lg fs-14px">Iniciar Sesión
+                        <button type="submit" class="btn btn-blue d-block h-45px w-100 btn-lg fs-14px">Iniciar Sesión
                         </button>
                     </div>
                     <div class="mb-40px pb-40px text-dark">
