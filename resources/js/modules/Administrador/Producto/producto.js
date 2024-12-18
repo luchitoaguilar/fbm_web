@@ -22,7 +22,7 @@ $(function () {
             { data: 'tipoProducto', name: 'tp.tipo_producto', title: 'Tipo de Producto', orderable: true, searchable: true },
             { data: 'nombre', name: 'nombre', title: 'Nombre', orderable: true, searchable: true },
             { data: 'precio', name: 'precio', title: 'Precio Actual (Bs)', orderable: true, searchable: true },
-            { data: 'precio_antes', name: 'precio_antes', title: 'Precio Anterior (Bs)', orderable: true, searchable: true },
+            // { data: 'precio_antes', name: 'precio_antes', title: 'Precio Anterior (Bs)', orderable: true, searchable: true },
             { data: 'enlace', name: 'enlace', title: 'Enlace', orderable: true, searchable: true },
             { data: 'presentacion', name: 'presentacion', title: 'Presentacion (Kg.)', orderable: false, searchable: true },
             { data: 'imagen', name: 'imagen', title: 'Imagen', orderable: false, searchable: true },
