@@ -58,7 +58,6 @@ var vm = new Vue({
                 .then(result => {
                     response = result.data;
                     vm.unidades = response.data;
-                    console.log(vm.unidades);
                 })
                 .catch(error => {
                     console.log(error);

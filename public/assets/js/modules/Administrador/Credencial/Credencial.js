@@ -231,7 +231,6 @@ var vm = new Vue({
                         console.log("if");
                     } else {
                         vm.datosLab = response.data.lab;
-                        console.log(vm.datosLab);
                     }
 
                     $('#frmverpersona').modal('show');

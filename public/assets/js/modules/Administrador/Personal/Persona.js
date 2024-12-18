@@ -496,7 +496,6 @@ var vm = new Vue({
             axios.get(urlShowNov, {params: {id: id}})
                 .then(response => {
                     vm.datosnovedad = response.data.data;
-                    console.log(vm.persona);
                     $('#frmverpersona').modal('hide');
                     $('#frmnovPer').modal('show');
                 })
