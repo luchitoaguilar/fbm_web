@@ -232,8 +232,7 @@
                               <div class="card-s__content--container | flow">
                                 <h2 class="card-s__title">Municion Cal. 9x19mm</h2>
                                 <p class="card-s__description">
-                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
-                                  labore laudantium deserunt fugiat numquam.
+                                  Municion cal. 9x19mm para todo uso.
                                 </p>
                               </div>
                               <a href="{{ route('municion9') }}"><button class="card-s__button">Ver mas..</button></a>
@@ -255,8 +254,7 @@
                               <div class="card-s__content--container | flow">
                                 <h2 class="card-s__title">Municion Cal. 7,62x51mm</h2>
                                 <p class="card-s__description">
-                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
-                                  labore laudantium deserunt fugiat numquam.
+                                  Municion cal. 7,62x51mm de fabricacion Boliviana.
                                 </p>
                               </div>
                               <a href="{{ route('municion762') }}"><button class="card-s__button">Ver mas..</button></a>
@@ -278,8 +276,7 @@
                               <div class="card-s__content--container | flow">
                                 <h2 class="card-s__title">Armamento</h2>
                                 <p class="card-s__description">
-                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
-                                  labore laudantium deserunt fugiat numquam.
+                                  Armamento de diferentes calibres y modelos.
                                 </p>
                               </div>
                               <a href="{{ route('armamento') }}"><button class="card-s__button">Ver mas..</button></a>
@@ -301,8 +298,7 @@
                               <div class="card-s__content--container | flow">
                                 <h2 class="card-s__title">Primers</h2>
                                 <p class="card-s__description">
-                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
-                                  labore laudantium deserunt fugiat numquam.
+                                  Materia prima de primera calidad.
                                 </p>
                               </div>
                               <a href="{{ route('primers') }}"><button class="card-s__button">Ver mas..</button></a>
@@ -324,8 +320,7 @@
                               <div class="card-s__content--container | flow">
                                 <h2 class="card-s__title">Puntas de Plomo</h2>
                                 <p class="card-s__description">
-                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
-                                  labore laudantium deserunt fugiat numquam.
+                                  Puntas en base a plomo recubiertas.
                                 </p>
                               </div>
                               <a href="{{ route('puntas_plomo') }}"><button class="card-s__button">Ver mas..</button></a>
@@ -347,8 +342,7 @@
                               <div class="card-s__content--container | flow">
                                 <h2 class="card-s__title">Equipo Militar</h2>
                                 <p class="card-s__description">
-                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
-                                  labore laudantium deserunt fugiat numquam.
+                                  Material para su equipo militar de combate.
                                 </p>
                               </div>
                               <a href="{{ route('equipo_militar') }}"><button class="card-s__button">Ver mas..</button></a>
@@ -370,8 +364,7 @@
                               <div class="card-s__content--container | flow">
                                 <h2 class="card-s__title">Replicas</h2>
                                 <p class="card-s__description">
-                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
-                                  labore laudantium deserunt fugiat numquam.
+                                  Replicas de pistola.
                                 </p>
                               </div>
                               <a href="{{ route('replicas') }}"><button class="card-s__button">Ver mas..</button></a>
@@ -393,8 +386,7 @@
                               <div class="card-s__content--container | flow">
                                 <h2 class="card-s__title">Otros</h2>
                                 <p class="card-s__description">
-                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
-                                  labore laudantium deserunt fugiat numquam.
+                                  Llaveros y otros.
                                 </p>
                               </div>
                               <a href="{{ route('otros') }}"><button class="card-s__button">Ver mas..</button></a>
