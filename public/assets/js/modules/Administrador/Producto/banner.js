@@ -112,7 +112,7 @@ var vm = new Vue({
             axios
                 .post(guardar_banner, modelo, {
                     headers: {
-                    'Accept': 'application/json',
+                    'Accept': 'multipart/form-data',
                     "Content-Type": "multipart/form-data",
                 }
             })

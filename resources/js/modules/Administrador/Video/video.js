@@ -103,7 +103,7 @@ var vm = new Vue({
             axios
                 .post(guardar_video, modelo, {
                     headers: {
-                        'Accept': 'application/json',
+                        'Accept': 'multipart/form-data',
                         "Content-Type": "multipart/form-data",
                     }
                 })
