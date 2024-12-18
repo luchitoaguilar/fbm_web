@@ -1,5 +1,3 @@
-// $(".default-select2").select2();
-
 $(function () {
     // var tablaPrincipal = $('#tabla-compra').DataTable({
     //     order: [[1, 'asc']],
@@ -46,22 +44,20 @@ var vm = new Vue({
         grado: {},
         celular: {},
         baucher: {},
-        mensaje: {},
+        email: {},
         id_ciudad: {},
         editar: false
     },
     created: function () {
-        // axios
-        //     .get(getTipoProducto)
-        //     .then(response => {
-        //         this.tipoProducto = response.data.data;
-        //     });
-        axios
-            .get(getCiudadVenta)
-            .then(response => {
-                console.log('here');
-                this.ciudadVenta = response.data.data;
-            });
+        this.id = null;
+        this.nombre = '';
+        this.celular = '';
+        this.grado = '';
+        this.email = '';
+        this.id_ciudad = '';
+        this.baucher = '';
+        this.editar = false;
+        this.errors = {};
     },
     methods: {
         showCompra(id) {
@@ -82,10 +78,10 @@ var vm = new Vue({
         createCompra() {
             vm.id = null;
             vm.nombre = '';
-            vm.telefono = '';
-            vm.asunto = '';
+            vm.celular = '';
+            vm.grado = '';
+            vm.baucher = '';
             vm.email = '';
-            vm.mensaje = '';
             vm.id_ciudad = '';
             vm.editar = false;
             vm.errors = {};
@@ -95,14 +91,16 @@ var vm = new Vue({
             vm.modelo = {
                 id: vm.id,
                 nombre: vm.nombre.toUpperCase(),
-                telefono: vm.telefono,
+                celular: vm.celular,
+                grado: vm.grado,
+                baucher: vm.baucher,
                 email: vm.email,
-                asunto: vm.asunto,
-                mensaje: vm.mensaje,
+                id_ciudad: vm.id_ciudad,
             };
 
+            console.log(vm.modelo);
             axios
-                .post(guardar_Compra, vm.modelo, {
+                .post(guardar_compra, vm.modelo, {
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json',
@@ -123,42 +121,5 @@ var vm = new Vue({
                     if (error.response.data.mostrar_mensaje) swal(error.response.data.message, { icon: 'error' });
                 })
         },
-        leerMensaje(id) {
-            Swal.fire({
-                title: 'Deseas marcar como leido el mensaje?',
-                text: "No se puede deshacer esta accion!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                cancelButtonText: 'Cancelar',
-                confirmButtonText: 'Si'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    axios.delete(eliminar_producto + '/' + id)
-                        .then(response => {
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'success',
-                                title: response.data.mensaje,
-                                showConfirmButton: false,
-                                timer: 1500
-                            })
-                            var tablaPrincipal = $('#tabla-producto').DataTable();
-                            tablaPrincipal.draw();
-                            $('#frmvergrado').modal('hide');
-                        })
-                } else {
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'error',
-                        title: 'Hubo algun problema, contactese con el administrador de la UTIC',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    $('#frmverproducto').modal('show');
-                }
-            });
-        }
     }
 });

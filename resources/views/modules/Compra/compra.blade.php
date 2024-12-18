@@ -86,9 +86,19 @@
                                 </div>
                             </div>
                             <div class="mb-2 row">
+                                <label class="col-form-label col-md-3 text-lg-end">Email <span
+                                        class="text-danger">*</span></label>
+                                <div class="col-md-7">
+                                    <input type="email" class="form-control" name="email" id="email" v-model="email" required />
+                                    <ul class="parsley-errors-list filled" id="parsley-id-19" v-if="errors.email">
+                                        <li class="parsley-required text-danger">@{{ errors.email }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mb-2 row">
                                 <label class="form-label col-form-label col-md-3 text-lg-end">Ciudad de Residencia</label>
                                 <div class="col-md-7">
-                                    <select class="form-select">
+                                    <select class="form-select" name="id_ciudad" id="id_ciudad" v-model="id_ciudad">
                                         @foreach ($ciudad as $ciudad)
                                         <option value="{{ $ciudad->id }}"
                                             @if ($ciudad->departamento == 'COCHABAMBA') selected="selected" @endif>
@@ -155,12 +165,10 @@
 @endsection
 
 @push('variables')
-    var auth = {!! Auth::user() !!};
-    var listar_producto = '{{ route('listar_producto') }}';
-    var guardar_contacto = '{{ route('guardar_contacto') }}';
-    var eliminar_producto = '{{ route('eliminar_producto', '') }}';
+    {{-- var auth = {!! Auth::user() !!}; --}}
+    var guardar_compra= '{{ route('guardar_compra') }}';
 
-    var getCiudadVenta = '{!! route('lista_ciudadVenta') !!}';
+    {{-- var getCiudadVenta = '{!! route('lista_ciudadVenta') !!}'; --}}
 @endpush
 
 @push('scripts')
