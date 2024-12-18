@@ -101,6 +101,13 @@ Route::get('contacto', [App\Http\Controllers\ContactoController::class, 'view'])
 Route::post('contacto', [App\Http\Controllers\ContactoController::class, 'store'])->name('guardar_contacto');
 
 /****************************** */
+/*     Compra                */
+/****************************** */
+Route::get('compra', [App\Http\Controllers\CompraController::class, 'view'])->name('compra');
+Route::post('compra', [App\Http\Controllers\CompraController::class, 'store'])->name('guardar_compra');
+
+
+/****************************** */
 /*     Requisitos                */
 /****************************** */
 Route::get('requisitos', [App\Http\Controllers\RequisitoController::class, 'view'])->name('requisitos');

@@ -131,7 +131,7 @@
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="{{ route('requisitos') }}">Requisitos</a>
                                         <a class="dropdown-item" href="{{ route('formularios') }}">Formularios</a>
-                                        <a class="dropdown-item" href="{{ route('armamento') }}">Registra tu compra</a>
+                                        <a class="dropdown-item" href="{{ route('compra') }}">Registra tu compra</a>
                                     </div>
                                 </li>
 

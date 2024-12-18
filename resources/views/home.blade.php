@@ -22,7 +22,7 @@
 
             <video loop muted autoplay playsInline preload="auto" id="video">
 
-                <source src="{{ asset('assets/video/home1.mp4') }}">
+                <source src="{{ asset('assets/video/fbm_final.mp4') }}">
 
             </video>
 
@@ -236,7 +236,7 @@
                                   labore laudantium deserunt fugiat numquam.
                                 </p>
                               </div>
-                              <button class="card-s__button">Ver mas..</button>
+                              <a href="{{ route('municion9') }}"><button class="card-s__button">Ver mas..</button></a>
                             </div>
                           </article>
                         {{-- </div> --}}
@@ -259,7 +259,7 @@
                                   labore laudantium deserunt fugiat numquam.
                                 </p>
                               </div>
-                              <button class="card-s__button">Ver mas..</button>
+                              <a href="{{ route('municion762') }}"><button class="card-s__button">Ver mas..</button></a>
                             </div>
                           </article>
                         {{-- </div> --}}
@@ -282,7 +282,7 @@
                                   labore laudantium deserunt fugiat numquam.
                                 </p>
                               </div>
-                              <button class="card-s__button">Ver mas..</button>
+                              <a href="{{ route('armamento') }}"><button class="card-s__button">Ver mas..</button></a>
                             </div>
                           </article>
                         {{-- </div> --}}
@@ -305,7 +305,7 @@
                                   labore laudantium deserunt fugiat numquam.
                                 </p>
                               </div>
-                              <button class="card-s__button">Ver mas..</button>
+                              <a href="{{ route('primers') }}"><button class="card-s__button">Ver mas..</button></a>
                             </div>
                           </article>
                         {{-- </div> --}}
@@ -328,7 +328,7 @@
                                   labore laudantium deserunt fugiat numquam.
                                 </p>
                               </div>
-                              <button class="card-s__button">Ver mas..</button>
+                              <a href="{{ route('puntas_plomo') }}"><button class="card-s__button">Ver mas..</button></a>
                             </div>
                           </article>
                         {{-- </div> --}}
@@ -351,7 +351,7 @@
                                   labore laudantium deserunt fugiat numquam.
                                 </p>
                               </div>
-                              <button class="card-s__button">Ver mas..</button>
+                              <a href="{{ route('equipo_militar') }}"><button class="card-s__button">Ver mas..</button></a>
                             </div>
                           </article>
                         {{-- </div> --}}
@@ -374,7 +374,7 @@
                                   labore laudantium deserunt fugiat numquam.
                                 </p>
                               </div>
-                              <button class="card-s__button">Ver mas..</button>
+                              <a href="{{ route('replicas') }}"><button class="card-s__button">Ver mas..</button></a>
                             </div>
                           </article>
                         {{-- </div> --}}
@@ -397,7 +397,7 @@
                                   labore laudantium deserunt fugiat numquam.
                                 </p>
                               </div>
-                              <button class="card-s__button">Ver mas..</button>
+                              <a href="{{ route('otros') }}"><button class="card-s__button">Ver mas..</button></a>
                             </div>
                           </article>
                         {{-- </div> --}}

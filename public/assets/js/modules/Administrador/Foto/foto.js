@@ -19,7 +19,11 @@ $(function () {
         columns: [
             { data: 'id', name: 'id', visible: false },
             { data: 'detalle', name: 'detalle', title: 'detalle', orderable: true, searchable: true },
-            { data: 'foto', name: 'foto', title: 'Foto', orderable: false, searchable: true },
+            {
+                title: 'Foto', searchable: false, orderable: false, data: function (row, type, set) {
+                    return `<a onclick="vm.$options.methods.mostrarFoto(${row.id})" class="btn btn-outline-info btn-xs"><i class="fa fa-foto"></i> Foto</a>`;
+                }
+            },
             { data: 'estado', name: 'estado', title: 'Estado', orderable: true, searchable: true },
             {
                 title: 'Opciones', searchable: false, orderable: false, data: function (row, type, set) {
@@ -52,7 +56,7 @@ var vm = new Vue({
                 .get(mostrar_foto + '/' + id)
                 .then(response => {
                     vm.modelo = response.data.data
-                  
+                    
                     $('#frmmostrarfoto').modal('show');
                 }).catch(error => {
                     Swal.fire(error.response.data.message, { icon: 'error' });
@@ -92,12 +96,13 @@ var vm = new Vue({
                     vm.modelo[key].forEach(value => modelo.append(key + '[]', value)) :
                     modelo.append(key, vm.modelo[key]);
             }
-          
+            
+            console.log(modelo);
             axios
                 .post(guardar_foto, modelo, {
                     headers: {
-                        Accept: "application/json",
-                        "Content-Type": "multipart/form-data",
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
                     }
                 })
                 .then(response => {
@@ -119,11 +124,10 @@ var vm = new Vue({
 
         },
         //los dos funcionan para recuperar los datos del archivo File y las asignamos a las variables
-        select_foto(event) {
+        select_Foto(event) {
             vm.foto = event.target.files[0];
         },
         editFoto(id) {
-            console.log('here');
             var temporal;
             vm.editar = true;
             vm.errors = {};

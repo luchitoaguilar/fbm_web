@@ -104,11 +104,11 @@ var vm = new Vue({
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Su mensaje se ha enviado exitosamente, En breve nos contactaremos contigo',
+                        title: 'Su mensaje se ha enviado exitosamente',
                         showConfirmButton: false,
                         timer: 1500
                     })
-                    vm.id = 0;
+                    vm.id = null;
                     vm.nombre = '';
                     vm.telefono = '';
                     vm.asunto = '';
