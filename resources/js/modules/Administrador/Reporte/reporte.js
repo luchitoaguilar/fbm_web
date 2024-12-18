@@ -175,7 +175,7 @@ var vm = new Vue({
                 .post(guardar_zafrero, modelo, {
                     headers: {
                         'Accept': 'application/json',
-                        'Content-Type': 'application/json',
+                        "Content-Type": "multipart/form-data",
                     }
                 })
                 .then(response => {
