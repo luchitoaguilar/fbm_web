@@ -57,6 +57,13 @@ function crear_menu(): array
             ],
             [
                 'icon' => 'fa fa-users',
+                'title' => __('messages.sistema.contacto'),
+                'url' => route('listar_contacto'),
+                'route-name' => '/contacto/listar',
+                'visible' => true
+            ],
+            [
+                'icon' => 'fa fa-user',
                 'title' => __('messages.sistema.persona'),
                 'url' => route('listar_persona'),
                 'route-name' => '/persona/listar',

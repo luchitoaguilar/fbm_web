@@ -64,6 +64,7 @@
 
 @push('variables')
     var auth = {!! Auth::user() !!};
+    var listar_foto = '{{ route('foto') }}';
     var datos_foto = '{{ route('buscar_foto', '') }}';
     var guardar_foto = '{{ route('guardar_foto') }}';
     var eliminar_foto = '{{ route('eliminar_foto', '') }}';

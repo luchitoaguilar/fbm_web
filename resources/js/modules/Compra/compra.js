@@ -98,7 +98,6 @@ var vm = new Vue({
                 id_ciudad: vm.id_ciudad,
             };
 
-            console.log(vm.modelo);
             axios
                 .post(guardar_compra, vm.modelo, {
                     headers: {

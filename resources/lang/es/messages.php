@@ -32,6 +32,7 @@ return [
         'reporteZafrero'     => 'Reporte Zafrero',
         'reporteVehiculo'     => 'Reporte Vehiculo',
         'variables'         => 'Parametros Sistema',
+        'contacto'            => 'Contacto',
     ],
 
     'menu'  => [
@@ -58,7 +59,8 @@ return [
         'cambiopassword'    => 'Cambio Contraseña',
         'detalles'           => 'Detalles',
         'personal'          => 'Personal',
-        'activar'           => 'Activar'
+        'activar'           => 'Activar',
+        'responder'         => 'Responder',
     ],
 
     'acciones'  => [

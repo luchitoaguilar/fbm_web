@@ -12,22 +12,25 @@ $(function () {
             url: 'listar'
         },
         columnDefs: [
-            // { className: "text-center", targets: "_all" },
-            // { className: "align-middle", targets: "_all" },
-            // { className: "text-center", targets: [7] },
+            {
+                targets:1, 
+                render:function(data){
+                    return moment(data).format('D-M-YYYY');
+                }
+            }
         ],
         columns: [
             { data: 'id', name: 'id', visible: false },
-            { data: 'tipoProducto', name: 'tp.tipo_producto', title: 'Tipo de Producto', orderable: true, searchable: true },
+            { data: 'fecha_creado', name: 'fecha_creado', title: 'Fecha', orderable: true, searchable: true },
             { data: 'nombre', name: 'nombre', title: 'Nombre', orderable: true, searchable: true },
-            { data: 'precio', name: 'precio', title: 'Precio Actual (Bs)', orderable: true, searchable: true },
-            { data: 'precio_antes', name: 'precio_antes', title: 'Precio Anterior (Bs)', orderable: true, searchable: true },
-            { data: 'enlace', name: 'enlace', title: 'Enlace', orderable: true, searchable: true },
-            { data: 'presentacion', name: 'presentacion', title: 'Presentacion (Kg.)', orderable: false, searchable: true },
-            { data: 'imagen', name: 'imagen', title: 'Imagen', orderable: false, searchable: true },
+            { data: 'email', name: 'email', title: 'Email', orderable: true, searchable: true },
+            { data: 'telefono', name: 'telefono', title: 'Telefono', orderable: true, searchable: true },
+            { data: 'asunto', name: 'asunto', title: 'Asunto', orderable: true, searchable: true },
+            { data: 'mensaje', name: 'mensaje', title: 'Mensaje', orderable: false, searchable: true },
+            { data: 'estado', name: 'personas.estado', title: 'Estado', orderable: false, searchable: false },
             {
                 title: 'Opciones', searchable: false, orderable: false, data: function (row, type, set) {
-                    return `<a onclick="vm.$options.methods.showProducto(${row.id})" class="btn btn-outline-info btn-xs"><i class="fa fa-bars"></i> Detalles</a>`;
+                    return `<a onclick="vm.$options.methods.showContacto(${row.id})" class="btn btn-outline-info btn-xs"><i class="fa fa-bars"></i> Detalles</a>`;
                 }
             },
         ],
@@ -42,6 +45,7 @@ var vm = new Vue({
     data: {
         errors: {},
         modelo: {},
+        reply: {},
         nombre: {},
         email: {},
         telefono: {},
@@ -60,17 +64,17 @@ var vm = new Vue({
         this.errors = {};
     },
     methods: {
-        showProducto(id) {
+        showContacto(id) {
             vm.usuario = {
                 rol: {},
                 persona: {},
                 cargo: {},
             };
             axios
-                .get(datos_producto + '/' + id)
+                .get(datos_contacto + '/' + id)
                 .then(response => {
                     vm.modelo = response.data.data
-                    $('#frmverproducto').modal('show');
+                    $('#frmvercontacto').modal('show');
                 }).catch(error => {
                     Swal.fire(error.response.data.message, { icon: 'error' });
                 });
@@ -121,19 +125,25 @@ var vm = new Vue({
                 })
 
         },
-        leerMensaje(id) {
+        replyContacto(id) {
+            $('#frmvercontacto').modal('hide');
             Swal.fire({
-                title: 'Deseas marcar como leido el mensaje?',
+                title: 'Deseas responder la consulta ?',
                 text: "No se puede deshacer esta accion!",
                 icon: 'warning',
+                input: 'text',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
                 cancelButtonText: 'Cancelar',
                 confirmButtonText: 'Si'
             }).then((result) => {
-                if (result.isConfirmed) {
-                    axios.delete(eliminar_producto + '/' + id)
+                if (result.value) {
+                    vm.reply = {
+                        id: id,
+                        msg: result.value,
+                    };
+                    axios.post(reply_contacto, vm.reply)
                         .then(response => {
                             Swal.fire({
                                 position: 'top-end',

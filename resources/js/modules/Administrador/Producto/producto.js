@@ -172,7 +172,6 @@ var vm = new Vue({
                     vm.imagen = temporal.imagen;
                     vm.tipo_producto = temporal.tipo_producto;
                     vm.id_ciudad = temporal.id_ciudad;
-                    console.log(temporal);
 
                     $('#frmproducto').modal('show');
                     $('#frmverproducto').modal('hide');

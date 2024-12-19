@@ -36,10 +36,10 @@ class FotoController extends Controller
      */
     public function listar(Request $request)
     {
-        //dd($request->ajax());
+        // dd($request->ajax());
         if ($request->ajax()) {
 
-            $foto = Foto::where('estado', 1)
+            $foto = Foto::where('estado',1)
                 ->orderBy('id', 'asc')
                 ->get();
 
@@ -119,8 +119,7 @@ class FotoController extends Controller
 
       
 
-        $foto = new foto($request->all());
-        //dd($foto);
+        $foto = new Foto($request->all());
         $foto->detalle = strtoupper($request->detalle);
         $foto->foto = $direccion_foto;
 
@@ -131,7 +130,7 @@ class FotoController extends Controller
         $foto->save();
 
         return response()->json([
-            'message' => __('messages.acciones.guardaritem', ['item' => __('validation.attributes.banner')])
+            'success' => true,'message' => __('messages.acciones.guardaritem', ['item' => __('validation.attributes.foto')])
         ]);
 
         // return redirect()->route('listar_banner')->with('mensaje', 'creado exitosamente');

@@ -19,11 +19,12 @@ $(function () {
         columns: [
             { data: 'id', name: 'id', visible: false },
             { data: 'detalle', name: 'detalle', title: 'detalle', orderable: true, searchable: true },
-            {
-                title: 'Foto', searchable: false, orderable: false, data: function (row, type, set) {
-                    return `<a onclick="vm.$options.methods.mostrarFoto(${row.id})" class="btn btn-outline-info btn-xs"><i class="fa fa-foto"></i> Foto</a>`;
-                }
-            },
+            { data: 'foto', name: 'foto', title: 'Foto', orderable: false, searchable: true },
+            // {
+            //     title: 'Foto', searchable: false, orderable: false, data: function (row, type, set) {
+            //         return `<a onclick="vm.$options.methods.mostrarFoto(${row.id})" class="btn btn-outline-info btn-xs"><i class="fa fa-foto"></i> Foto</a>`;
+            //     }
+            // },
             { data: 'estado', name: 'estado', title: 'Estado', orderable: true, searchable: true },
             {
                 title: 'Opciones', searchable: false, orderable: false, data: function (row, type, set) {
@@ -96,8 +97,7 @@ var vm = new Vue({
                     vm.modelo[key].forEach(value => modelo.append(key + '[]', value)) :
                     modelo.append(key, vm.modelo[key]);
             }
-            
-            console.log(modelo);
+
             axios
                 .post(guardar_foto, modelo, {
                     headers: {

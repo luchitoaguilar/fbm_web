@@ -100,6 +100,19 @@ Route::get('objetivos', [App\Http\Controllers\AcercaController::class, 'objetivo
 Route::get('contacto', [App\Http\Controllers\ContactoController::class, 'view'])->name('contacto');
 Route::post('contacto', [App\Http\Controllers\ContactoController::class, 'store'])->name('guardar_contacto');
 
+Route::group(['middleware' => ['administrador']], function () {
+    Route::get('contacto/listar', [App\Http\Controllers\ContactoController::class, 'listar'])->name('listar_contacto');
+    Route::get('contacto/{id}/edit', [App\Http\Controllers\ContactoController::class, 'edit'])->name('editar_contacto');
+    Route::delete('contacto/{id}', [App\Http\Controllers\ContactoController::class, 'destroy'])->name('eliminar_contacto');
+    Route::get('contacto/{contacto_id}', [App\Http\Controllers\ContactoController::class, 'getContacto'])->name('buscar_contacto');
+    Route::post('contacto', [App\Http\Controllers\ContactoController::class, 'replyContacto'])->name('reply_contacto');
+
+    Route::get('banner/create', [App\Http\Controllers\BannerController::class, 'create'])->name('crear_banner');
+    Route::post('banner', [App\Http\Controllers\BannerController::class, 'storeBanner'])->name('guardar_banner');
+    Route::put('banner/{id}', [App\Http\Controllers\BannerController::class, 'update'])->name('actualizar_banner');
+    Route::delete('banner/{id}', [App\Http\Controllers\BannerController::class, 'destroy'])->name('eliminar_banner');
+});
+
 /****************************** */
 /*     Compra                */
 /****************************** */
@@ -163,7 +176,7 @@ Route::group(['middleware' => ['administrador']], function () {
 });
 
 /****************************** */
-/*     Foto                    */
+/*     Video                    */
 /****************************** */
 
 Route::get('videos/{id}', [App\Http\Controllers\VideoController::class, 'show'])->name('video_ver');
@@ -181,7 +194,7 @@ Route::group(['middleware' => ['administrador']], function () {
 });
 
 /****************************** */
-/*     Video                   */
+/*     Foto                   */
 /****************************** */
 
 Route::get('fotos/{id}', [App\Http\Controllers\FotoController::class, 'show'])->name('foto_ver');

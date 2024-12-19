@@ -22,7 +22,7 @@
                             <div><img class=" ml-5 rounded" :src="modelo.foto" width="50px"></div>
                         </template>
                         <div class="form-group">
-                            <input type="file" @change="select_foto" class="filestyle" id="foto" name="foto" data-buttonname="btn-primary" data-buttontext="Seleccionar..." >
+                            <input type="file" @change="select_Foto" class="filestyle" id="foto" name="foto" data-buttonname="btn-primary" data-buttontext="Seleccionar..." >
                         </div>
                         <ul class="parsley-errors-list filled" id="parsley-id-19" v-if="errors.foto"><li class="parsley-required">@{{ errors.foto }}</li></ul>
                     </div>
