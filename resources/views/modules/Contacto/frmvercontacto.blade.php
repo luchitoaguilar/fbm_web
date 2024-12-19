@@ -28,7 +28,6 @@
                 </div>
             </template>
             <template v-else>
-                <!-- BEGIN card -->
                 <div class="card text-white border-0 bg-teal text-center mb-2">
                     <div class="card-body">
                         <blockquote class="blockquote">
@@ -36,7 +35,6 @@
                         </blockquote>
                     </div>
                 </div>
-                <!-- END card -->
             </template>
         </div>
     </div>
