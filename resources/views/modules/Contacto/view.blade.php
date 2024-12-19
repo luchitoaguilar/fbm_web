@@ -58,9 +58,7 @@
     var datos_contacto = '{{ route('buscar_contacto', '') }}';
     var reply_contacto = '{{ route('reply_contacto', '') }}';
 
-    var guardar_foto = '{{ route('guardar_foto') }}';
-    var eliminar_foto = '{{ route('eliminar_foto', '') }}';
-    var mostrar_foto = '{{ route('mostrar_foto', '') }}';
+    {{-- var guardar_contacto = '{{ route('guardar_contacto') }}'; --}}
 
 @endpush
 

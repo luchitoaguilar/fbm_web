@@ -105,12 +105,7 @@ Route::group(['middleware' => ['administrador']], function () {
     Route::get('contacto/{id}/edit', [App\Http\Controllers\ContactoController::class, 'edit'])->name('editar_contacto');
     Route::delete('contacto/{id}', [App\Http\Controllers\ContactoController::class, 'destroy'])->name('eliminar_contacto');
     Route::get('contacto/{contacto_id}', [App\Http\Controllers\ContactoController::class, 'getContacto'])->name('buscar_contacto');
-    Route::post('contacto', [App\Http\Controllers\ContactoController::class, 'replyContacto'])->name('reply_contacto');
-
-    Route::get('banner/create', [App\Http\Controllers\BannerController::class, 'create'])->name('crear_banner');
-    Route::post('banner', [App\Http\Controllers\BannerController::class, 'storeBanner'])->name('guardar_banner');
-    Route::put('banner/{id}', [App\Http\Controllers\BannerController::class, 'update'])->name('actualizar_banner');
-    Route::delete('banner/{id}', [App\Http\Controllers\BannerController::class, 'destroy'])->name('eliminar_banner');
+    Route::post('contactos', [App\Http\Controllers\ContactoController::class, 'replyContacto'])->name('reply_contacto');
 });
 
 /****************************** */

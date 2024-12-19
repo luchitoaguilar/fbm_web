@@ -21,22 +21,22 @@
                 <h5>Mensaje</h5>
                 <p class="text-muted">@{{ modelo.mensaje }}</p>
             </div>
-            <template v-if="@{{modelo.estado}} == 1">
-            <div class="modal-footer">
-                <a href="#" @click.prevent="replyContacto(modelo.id)" class="btn btn-success"><i
-                        class="fa fa-paper-plane"></i> {{ __('messages.botones.responder') }}</a>
-            </div>
+            <template v-if= "modelo.estado == 1">
+                <div class="modal-footer">
+                    <a href="#" @click.prevent="replyContacto(modelo.id)" class="btn btn-success"><i
+                            class="fa fa-paper-plane"></i> {{ __('messages.botones.responder') }}</a>
+                </div>
             </template>
             <template v-else>
                 <!-- BEGIN card -->
-					<div class="card text-white border-0 bg-teal text-center mb-2">
-						<div class="card-body">
-							<blockquote class="blockquote">
-								<p>YA SE RESPONDIO A LA CONSULTA DE ESTA PERSONA</p>
-							</blockquote>
-						</div>
-					</div>
-					<!-- END card -->
+                <div class="card text-white border-0 bg-teal text-center mb-2">
+                    <div class="card-body">
+                        <blockquote class="blockquote">
+                            <p>YA SE RESPONDIO A LA CONSULTA DE ESTA PERSONA</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <!-- END card -->
             </template>
         </div>
     </div>

@@ -139,7 +139,7 @@ class ContactoController extends Controller
         $contacto->save();
 
         return response()->json([
-            'message' => __('messages.acciones.guardaritem', ['item' => __('validation.attributes.contacto')])
+            'mensaje' => __('messages.acciones.guardaritem', ['item' => __('validation.attributes.contacto')])
         ]);
     }
 
