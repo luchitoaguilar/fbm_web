@@ -27,7 +27,7 @@ if (config('app.env') === 'production') {
     URL::forceScheme('https');
 }
 
-URL::forceScheme('https');
+// URL::forceScheme('https');
 
 Auth::routes();
 
@@ -114,7 +114,15 @@ Route::group(['middleware' => ['administrador']], function () {
 Route::get('compra', [App\Http\Controllers\CompraController::class, 'view'])->name('compra');
 Route::post('compra', [App\Http\Controllers\CompraController::class, 'store'])->name('guardar_compra');
 
-
+Route::group(['middleware' => ['administrador']], function () {
+    Route::get('compra/listar', [App\Http\Controllers\CompraController::class, 'listar'])->name('listar_compra');
+    Route::get('compra/{id}/edit', [App\Http\Controllers\CompraController::class, 'edit'])->name('editar_compra');
+    Route::delete('compra/{id}', [App\Http\Controllers\CompraController::class, 'destroy'])->name('eliminar_compra');
+    Route::get('compra/{compra_id}', [App\Http\Controllers\CompraController::class, 'getCompra'])->name('buscar_compra');
+    Route::post('compras_mail', [App\Http\Controllers\CompraController::class, 'replyCompra'])->name('reply_compra');
+    Route::post('compras_whatsapp', [App\Http\Controllers\CompraController::class, 'replyWhatsappCompra'])->name('reply_whatsapp_compra');
+    Route::post('compras_whatsapp_masiva', [App\Http\Controllers\CompraController::class, 'replyWhatsappCompraMasiva'])->name('reply_whatsapp_compra_masiva');
+});
 /****************************** */
 /*     Requisitos                */
 /****************************** */

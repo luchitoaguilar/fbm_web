@@ -38,6 +38,7 @@ class ContactoController extends Controller
             $destino = ['enc_ventas_nal_fbm@cofadena.gob.bo', 'jefe_com_fbm@cofadena.gob.bo'];
             $data = ['nombre' => $contacto->nombre, 'email' => $contacto->email , 'telefono' =>$contacto->telefono, 'asunto' => $contacto->asunto, 'mensaje' => $contacto->mensaje];
             Mail::send('modules.PlantillaCorreo.mensajeContacto', $data, function ($mess) use ($destino, $remitente) {
+                $mess->subject('Fabrica Boliviana de Munición - Respuesta');
                 $mess->from($remitente, 'FBM - COFADENA');
                 $mess->to($destino)->subject('Solicitud Información - FBM');
             });
@@ -131,6 +132,7 @@ class ContactoController extends Controller
             $destino = $contacto->email;
             $data = ['nombre' => $contacto->nombre, 'mensaje' => $request->msg];
             Mail::send('modules.PlantillaCorreo.respuestaContacto', $data, function ($mess) use ($destino, $remitente) {
+                $mess->subject('Fabrica Boliviana de Munición - Respuesta');
                 $mess->from($remitente, 'FBM - COFADENA');
                 $mess->to($destino)->subject('Respuesta Información - FBM');
             });

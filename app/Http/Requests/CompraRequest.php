@@ -37,7 +37,7 @@ class CompraRequest extends FormRequest
             ];
         } else {
             return [
-                'id' => 'exists:banner,id',
+                'id' => 'exists:compra,id',
                 'nombre'   => 'required|max:250',
                 'grado'   => 'max:250',
                 'celular'   => 'required|max:250',

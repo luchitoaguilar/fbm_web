@@ -56,6 +56,17 @@ function crear_menu(): array
                 'visible' => true
             ],
             [
+                'icon' => 'fa fa-user',
+                'title' => __('messages.sistema.persona'),
+                'url' => route('listar_persona'),
+                'route-name' => '/persona/listar',
+                'visible' => true
+            ],
+            [
+                'title' => 'Menú Ventas',
+                'url' => '#',
+            ],
+            [
                 'icon' => 'fa fa-users',
                 'title' => __('messages.sistema.contacto'),
                 'url' => route('listar_contacto'),
@@ -63,16 +74,12 @@ function crear_menu(): array
                 'visible' => true
             ],
             [
-                'icon' => 'fa fa-user',
-                'title' => __('messages.sistema.persona'),
-                'url' => route('listar_persona'),
-                'route-name' => '/persona/listar',
+                'icon' => 'fa fa-address-card',
+                'title' => __('messages.sistema.compra'),
+                'url' => route('listar_compra'),
+                'route-name' => '/compra/listar',
                 'visible' => true
             ],
-            // [
-            //     'title' => 'Menú Zafra',
-            //     'url' => '#',
-            // ],
             // [
             //     'icon' => 'fa fa-blind',
             //     'title' =>  'Personal ' . __('messages.sistema.zafrero'),

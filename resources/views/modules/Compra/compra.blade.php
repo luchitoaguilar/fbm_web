@@ -52,8 +52,7 @@
                                 </div>
                             </div>
                             <div class="mb-2 row">
-                                <label class="col-form-label col-md-3 text-lg-end">Grado <span
-                                        class="text-danger">*</span></label>
+                                <label class="col-form-label col-md-3 text-lg-end">Grado </label>
                                 <div class="col-md-7">
                                     <input type="text" class="form-control" name="grado" id="grado" v-model="grado"
                                         required />
@@ -82,6 +81,17 @@
                                         v-model="baucher" required />
                                     <ul class="parsley-errors-list filled" id="parsley-id-19" v-if="errors.baucher">
                                         <li class="parsley-required text-danger">@{{ errors.baucher }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mb-2 row">
+                                <label class="col-form-label col-md-3 text-lg-end">Monto Depositado <span
+                                        class="text-danger">*</span></label>
+                                <div class="col-md-7">
+                                    <input type="text" class="form-control" name="monto" id="monto"
+                                        v-model="monto" required />
+                                    <ul class="parsley-errors-list filled" id="parsley-id-19" v-if="errors.monto">
+                                        <li class="parsley-required text-danger">@{{ errors.monto }}</li>
                                     </ul>
                                 </div>
                             </div>

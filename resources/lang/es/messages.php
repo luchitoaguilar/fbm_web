@@ -33,6 +33,7 @@ return [
         'reporteVehiculo'     => 'Reporte Vehiculo',
         'variables'         => 'Parametros Sistema',
         'contacto'            => 'Contacto',
+        'compra'            => 'Compra',
     ],
 
     'menu'  => [
@@ -61,6 +62,8 @@ return [
         'personal'          => 'Personal',
         'activar'           => 'Activar',
         'responder'         => 'Responder',
+        'responder_mail'         => 'Responder correo',
+        'responder_whatsapp'         => 'Responder Whatsapp',
     ],
 
     'acciones'  => [
@@ -70,6 +73,7 @@ return [
         'restauraritem'         => ':item se restauró correctamente en la base de datos',
         'fusionararchivo'       => ':item se realizo la fusion del archivo correctamente',
         'subirarchivo'          => 'el archivo se subio correctamente',
+        'enviocorreo'           => 'se envio correctamente el correo electronico'
     ],
 
     'restricciones' => [

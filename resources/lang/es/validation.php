@@ -173,6 +173,7 @@ return [
         'reporteZafrero'     => 'Reporte Zafrero',
         'reporteVehiculo'     => 'Reporte Vehiculo',
         'variables'         => 'Parametros Sistema',
+        'compra'            => 'Compra',
     ],
 
     /* para los valores */
