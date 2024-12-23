@@ -61,7 +61,7 @@ class VideoRequest extends FormRequest
             return [
                 'id' => 'exists:videos,id',
                 'titulo'   => 'required|max:100',
-                'video'   => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm,mpg4,mpg | max:100000'
+                'video'   => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm,mpg4,mpg | max:10000'
             ];
         }
     }
@@ -73,7 +73,7 @@ class VideoRequest extends FormRequest
     {
         return [
             'titulo'   => 'required|max:200',
-            'video'   => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm,mpg4,mpg | max:100000'
+            'video'   => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm,mpg4,mpg | max:10000'
         ];
     }
 }

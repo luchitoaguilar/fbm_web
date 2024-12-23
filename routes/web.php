@@ -27,7 +27,7 @@ if (config('app.env') === 'production') {
     URL::forceScheme('https');
 }
 
-// URL::forceScheme('https');
+URL::forceScheme('https');
 
 Auth::routes();
 
@@ -188,7 +188,7 @@ Route::get('videos', [App\Http\Controllers\VideoController::class, 'index'])->na
 Route::group(['middleware' => ['administrador']], function () {
     Route::get('video/listar', [App\Http\Controllers\VideoController::class, 'listar'])->name('listar_video');
     Route::get('video/create', [App\Http\Controllers\VideoController::class, 'create'])->name('crear_video');
-    Route::post('video', [App\Http\Controllers\VideoController::class, 'storeVideo'])->name('guardar_video');
+    Route::post('videostore', [App\Http\Controllers\VideoController::class, 'storeVideo'])->name('guardar_video');
     Route::get('video/{id}/edit', [App\Http\Controllers\VideoController::class, 'edit'])->name('editar_video');
     Route::put('video/{id}', [App\Http\Controllers\VideoController::class, 'update'])->name('actualizar_video');
     Route::delete('video/{id}', [App\Http\Controllers\VideoController::class, 'destroy'])->name('eliminar_video');

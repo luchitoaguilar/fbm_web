@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\VideoRequest;
 use App\Models\Video;
-use App\Models\Zafra;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,14 +18,11 @@ class VideoController extends Controller
      */
     public function index()
     {
-        $zafra = Zafra::where('estado', 1)
-        ->sum('peso_neto');
-
         $video = Video::where('estado', 1)
             ->orderBy('id', 'desc')
             ->get();
         //        dd($video);
-        return view('modules.Administrador.Video.index', compact('video', 'zafra'));
+        return view('modules.Administrador.Video.index', compact('video'));
     }
 
     /**
@@ -77,7 +73,7 @@ class VideoController extends Controller
      * @param VideoRequest $request
      * @return JsonResponse
      */
-    public function storevideo(VideoRequest $request) : JsonResponse
+    public function storeVideo(VideoRequest $request) : JsonResponse
     {
         $datosValidos = $request->validated();
 
@@ -110,9 +106,7 @@ class VideoController extends Controller
 
         } else {
             $direccion_video = "/assets/video/video_default.pdf";
-        }
-
-      
+        } 
 
         $video = new video($request->all());
         //dd($video);
@@ -122,7 +116,7 @@ class VideoController extends Controller
         $video->estado = 1;
         $video->usuario_creado_id = Auth::user()->id;
         $video->usuario_modificado_id = Auth::user()->id;
-
+dd($video);
         $video->save();
 
         return response()->json([

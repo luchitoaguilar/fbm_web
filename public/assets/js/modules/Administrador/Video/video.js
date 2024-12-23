@@ -97,9 +97,6 @@ var vm = new Vue({
                     vm.modelo[key].forEach(value => modelo.append(key + '[]', value)) :
                     modelo.append(key, vm.modelo[key]);
             }
-            for (var pair of modelo.entries()) {
-                console.log(pair[0]+ '=> ' + pair[1]); 
-            }
             axios
                 .post(guardar_video, modelo, {
                     headers: {

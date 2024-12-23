@@ -78,7 +78,7 @@
                             @endif
                         </div>
                         @if ($producto->precio != null)
-                            <strong><div class="card-price">{{ $producto->precio }} Bs</div></strong>
+                            {{-- <strong><div class="card-price">{{ $producto->precio }} Bs</div></strong> --}}
                         @endif
                     </div>
                 @endif
