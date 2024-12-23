@@ -289,8 +289,8 @@
                             <article class="card-s">
                             <img
                               class="card-s__background"
-                              src="{{ asset('images/primers1.jpg') }}"
-                              alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+                              src="{{ asset('images/primers.jpg') }}"
+                              alt="Primers"
                               width="1920"
                               height="2193"
                             />
@@ -298,7 +298,7 @@
                               <div class="card-s__content--container | flow">
                                 <h2 class="card-s__title">Primers</h2>
                                 <p class="card-s__description">
-                                  Materia prima de primera calidad.
+                                    Materia prima de primera calidad.
                                 </p>
                               </div>
                               <a href="{{ route('primers') }}"><button class="card-s__button">Ver mas..</button></a>
