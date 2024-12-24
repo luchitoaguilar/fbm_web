@@ -71,9 +71,9 @@ class FotoRequest extends FormRequest
      */
     protected function noexiste(): array
     {
-        // return [
-        //     'detalle'   => 'nullable|max:200',
-        //     'foto'   => 'required|mimes:jpeg,png,bmp,jpg,gif | max:100000'
-        // ];
+        return [
+            'detalle'   => 'nullable|max:200',
+            'foto'   => 'required|mimes:jpeg,png,bmp,jpg,gif | max:100000'
+        ];
     }
 }
