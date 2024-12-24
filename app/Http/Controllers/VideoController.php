@@ -251,7 +251,7 @@ class VideoController extends Controller
     {
         $video = Video::where('id', $id)
             ->get();
-        //dd($video);
+        // dd($video);
         return view('modules.Administrador.Video.show', compact('video'));
     }
 }

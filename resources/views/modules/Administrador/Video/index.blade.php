@@ -49,10 +49,7 @@
                     @else
                         <div class="row justify-content-center">
                             <p style="background:#1e3469; opacity: 0.6; color:white; font-weight:bold; padding:15px; border:3px solid #f3e498; margin-top:10px; margin-bottom:10px; text-align:center; font-size:22px;
-                                                    border-radius:10px;"><strong>NO EXISTEN
-                                    VIDEOS EN
-                                    ESTE
-                                    MOMENTO</strong>
+                                                    border-radius:10px;"><strong>NO EXISTEN VIDEOS EN ESTE MOMENTO</strong>
                             </p>
                         </div>
                     @endif
