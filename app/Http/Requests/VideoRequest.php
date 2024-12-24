@@ -61,7 +61,7 @@ class VideoRequest extends FormRequest
             return [
                 'id' => 'exists:videos,id',
                 'titulo'   => 'required|max:100',
-                'video'   => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm,mpg4,mpg | max:10000'
+                'video'   => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm,mpg4,mpg | max:50000'
             ];
         }
     }
@@ -72,8 +72,8 @@ class VideoRequest extends FormRequest
     protected function noexiste(): array
     {
         return [
-            'titulo'   => 'required|max:200',
-            'video'   => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm,mpg4,mpg | max:10000'
+            // 'titulo'   => 'nullable|max:200',
+            // 'video'   => 'required|mimes:mp4,ogx,oga,ogv,ogg,webm,mpg4,mpg | max:50000'
         ];
     }
 }

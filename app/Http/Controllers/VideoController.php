@@ -109,14 +109,14 @@ class VideoController extends Controller
         } 
 
         $video = new video($request->all());
-        //dd($video);
+
         $video->titulo = strtoupper($request->titulo);
         $video->video = $direccion_video;
 
         $video->estado = 1;
         $video->usuario_creado_id = Auth::user()->id;
         $video->usuario_modificado_id = Auth::user()->id;
-dd($video);
+
         $video->save();
 
         return response()->json([
